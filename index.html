@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --accent-color: #03045e;
+      --primary-color: #0077b6;
+      --secondary-color: #133d47;
+      --text-color: hsl(190, 64%, 95%);
+      --secondary-text-color: hsl(190, 64%, 78%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 14pt;
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--primary-color);
+    }
+
+
+    nav {
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    .scrolled {
+      background-color: rgb(0, 217, 255);
+      color: black;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    }
+
+
+    header {
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap-reverse;
+    }
+
+    header .container {
+      width: 850px;
+      max-width: 100%;
+    }
+
+    header img {
+      height: 70vh;
+    }
+
+    header h1 {
+      margin-top: 200px;
+      font-size: 4rem;
+    }
+
+    header h2 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    header p {
+      color: var(--secondary-text-color);
+    }
+
+    header .read-more {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 500;
+      border-radius: 1000px;
+      padding: .5em 1.25em;
+      text-decoration: none;
+      margin-bottom: 80px;
+      transition: 200ms ease;
+      cursor: pointer;
+    }
+
+    header .read-more:hover {
+      background-color: var(--secondary-color);
+    }
+
+    #skill-section {
+      padding: 80px 20px 150px 20px;
+      background-color: var(--secondary-color);
+    }
+
+    #skill-section h2 {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    #skill-section .wrapper {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .skill-container {
+      width: 400px;
+      max-width: 100%;
+      border: 10px solid var(--primary-color);
+      border-top: none;
+    }
+
+    .skill-container h3 {
+      background-color: var(--primary-color);
+      padding: 15px 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .skill-container ul {
+      margin: 10px 0;
+      list-style: none;
+    }
+
+    .skill-container ul li {
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .skill-container ul li progress {
+      accent-color: var(--accent-color);
+    }
+
+    #projects-section {
+      padding: 100px 20px;
+    }
+
+    #projects-section h2 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    details {
+      margin: 20px auto;
+      width: 1000px;
+      max-width: 100%;
+      background-color: var(--secondary-color);
+      border-radius: 6px;
+    }
+
+    details summary {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    details .number {
+      background-color: var(--accent-color);
+      min-height: 50px;
+      min-width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    details h3 {
+      font-size: 1.75rem;
+    }
+
+    details .text-container {
+      padding: 30px;
+      padding-top: 0;
+    }
+
+    details .project-link {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: var(--accent-color);
+      color: white;
+      padding: .75em 1.5em;
+      border-radius: 2px;
+      font-weight: 500;
+      transition: 300ms ease;
+      cursor: pointer;
+    }
+
+    details .project-link:hover {
+      background-color: var(--primary-color);
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      padding: 100px 20px;
+    }
+
+    footer .grid-container {
+      margin: 0 auto;
+      width: 1000px;
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr max-content;
+      gap: 100px;
+    }
+
+    footer #at-symbol {
+      font-size: 250pt;
+    }
+
+    footer h3 {
+      margin-top: 80px;
+      font-size: 2rem;
+    }
+
+    footer a {
+      margin-top: 5px;
+      display: inline-block;
+      color: var(--secondary-text-color);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--text-color);
+    }
+
+    @media(max-width: 1000px) {
+      header {
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        margin-top: 0;
+        font-size: 10vw;
+      }
+
+      header h2 {
+        font-size: 1.3rem;
+      }
+
+      header img {
+        display: none;
+      }
+
+      footer .grid-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+      }
+
+      footer #at-symbol {
+        font-size: 150pt;
+      }
+
+      footer h3 {
+        margin-top: 50px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top p-3">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img width="90" src="./asstes/logo/mehedi-logo.svg" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Portfolio</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+
+          <li class="nav-item ps-2">
+            <a class="btn btn-outline-dark" href="#"><span style="font-weight: bold;">Hire
+                ME</span></span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <img src="img.png">
+    <div class="container">
+      <h1>Rick sanchez</h1>
+      <h2>The mad scientist</h2>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et Lorem ipsum dolor
+        sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et Lorem ipsum dolor sit amet.</p>
+      <br />
+      <a href="#skill-section" class="read-more">Read More</a>
+    </div>
+  </header>
+  <section id="skill-section">
+    <h2>My Skillset</h2>
+    <div class="wrapper">
+      <div class="skill-container">
+        <h3>Front-End</h3>
+        <ul>
+          <li>Adobe Photoshop <progress max="100" value="80"></progress> </li>
+          <li>HTML, CSS <progress max="100" value="100"></progress> </li>
+          <li>JavaScript <progress max="100" value="100"></progress> </li>
+          <li>React.js <progress max="100" value="70"></progress> </li>
+        </ul>
+      </div>
+      <div class="skill-container">
+        <h3>Back-End</h3>
+        <ul>
+          <li>Express.js <progress max="100" value="70"></progress> </li>
+          <li>Node.js <progress max="100" value="70"></progress> </li>
+          <li>Python <progress max="100" value="50"></progress> </li>
+          <li>Java <progress max="100" value="70"></progress> </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="projects-section">
+    <h2>My Top 3 Projects</h2>
+    <div class="flex-container">
+      <details>
+        <summary>
+          <span class="number">1</span>
+          <h3>To-Do List App</h3>
+        </summary>
+        <div class="text-container">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, a animi. Accusamus animi earum
+            reprehenderit rem! Neque corporis aperiam atque asperiores animi provident fugiat quaerat ipsam cupiditate
+            accusantium rerum expedita explicabo id fugit nam beatae ducimus nihil velit, quasi laboriosam quis magnam!
+            Esse, porro sit? Tempore ex, adipisci praesentium quae, mollitia laudantium rem sapiente dignissimos,
+            molestiae eius obcaecati fugiat. Beatae quod iusto voluptas aspernatur amet! Non fugit esse laborum
+            dignissimos voluptatem laboriosam, aliquam voluptate sapiente omnis. Repellat nesciunt eligendi alias
+            quaerat similique minima ut dignissimos amet voluptatem. Minima omnis itaque architecto, minus veritatis,
+            similique ipsam numquam vero, vel quia cupiditate!</p>
+          <a class="project-link">Visit Website</a>
+        </div>
+      </details>
+      <details>
+        <summary><span class="number">2</span>
+          <h3>Calculator App</h3>
+        </summary>
+        <div class="text-container">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, consequatur dolorum totam quos magni
+            odio, dignissimos nostrum necessitatibus officiis qui blanditiis itaque eaque obcaecati enim repudiandae!
+            Quam incidunt nihil iusto sequi, iste est dolores vitae esse quibusdam sint quod tempore officia blanditiis
+            maiores a nisi. Impedit, tenetur magnam laborum placeat tempore debitis veniam odit minus dignissimos
+            suscipit quam saepe cupiditate distinctio aliquam voluptatum error reprehenderit qui. Sit quisquam, itaque
+            ut excepturi sunt earum quia. Ab exercitationem voluptatum explicabo laboriosam ea excepturi vero optio
+            voluptatem culpa doloremque maiores, amet ipsam beatae architecto recusandae nostrum tempore repudiandae
+            quaerat, unde natus. Inventore, blanditiis.</p>
+          <a class="project-link">Visit Website</a>
+        </div>
+      </details>
+      <details>
+        <summary><span class="number">3</span>
+          <h3>Fitness Tracker</h3>
+        </summary>
+        <div class="text-container">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores consequuntur odit distinctio pariatur,
+            vitae doloribus possimus labore aspernatur rem saepe aliquid accusamus tempora libero temporibus quia. Cum
+            eveniet eligendi aspernatur sit sapiente dolor, quos facilis placeat saepe architecto minima. Quo, ad iure.
+            Illo aut totam magni consectetur earum tenetur ipsam vel ab minus quod iste rem hic quis harum esse, fugiat
+            quam ullam ipsum soluta. Optio nisi rerum, quasi id saepe quisquam. Beatae, non. Eveniet ut beatae deleniti
+            doloribus et accusamus veritatis expedita. Aliquam, quidem debitis. A aliquid repellat debitis vero odio
+            optio possimus, eveniet quasi illum sint provident earum.</p>
+          <a class="project-link">Visit Website</a>
+        </div>
+      </details>
+    </div>
+  </section>
+  <footer>
+    <div class="grid-container">
+      <span id="at-symbol">@</span>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:example@email.com">example@email.com</a>
+        <h3>Location</h3>
+        <a href="">Earth, C-137</a>
+      </div>
+      <div>
+        <h3>Projects</h3>
+        <a href="https://www.github.com/sudo-mehedi">Github</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+
+  <script>
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', (e) => {
+      console.log("Hello");
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled')
+      }
+    });
+  </script>
+</body>
+
+</html>
